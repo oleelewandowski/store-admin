@@ -11,6 +11,7 @@ import {
   columns,
 } from "@/components/components/billboards/columns";
 import { DataTable } from "@/components/ui/data-table";
+import ApiList from "@/components/ui/api-list";
 
 interface BillboardClientProps {
   data: BillboardColumn[];
@@ -28,7 +29,7 @@ const BillboardsClient: React.FC<BillboardClientProps> = ({ data }) => {
       <div className='flex items-center justify-between'>
         <Heading
           title={`Billboards (${data.length})`}
-          description='Manage billboards for your store...'
+          description='Manage billboards for your store'
         />
         <Button onClick={() => createBillboard()}>
           <Plus className='w-4 h-4 mr-2' />
@@ -37,6 +38,8 @@ const BillboardsClient: React.FC<BillboardClientProps> = ({ data }) => {
       </div>
       <Separator />
       <DataTable columns={columns} data={data} filtersKey='label' />
+      <Heading title='API' description='API calls for Billboards' />
+      <ApiList entityIdName='billboardId' entityName='billboards' />
     </>
   );
 };
