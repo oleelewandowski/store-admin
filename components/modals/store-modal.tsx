@@ -42,9 +42,9 @@ export const StoreModal = () => {
 
       window.location.assign(`/${response.data.id}`);
 
-      console.log(`[MODALS_STORE_MODAL_RESP]: ${response.data}`);
+      console.error(`[MODALS_STORE_MODAL_RESP]: ${response.data}`);
     } catch (error) {
-      console.log(`[MODALS_STORE_MODAL_ERROR]: ${error}`);
+      console.error(`[MODALS_STORE_MODAL_ERROR]: ${error}`);
       toast.error("Something went wrong when creating the store...");
       console.warn(`[MODALS_STORE_MODAL_ERROR]: ${error}`);
     } finally {

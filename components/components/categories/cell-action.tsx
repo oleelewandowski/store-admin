@@ -5,7 +5,7 @@ import { Copy, Edit, MoreHorizontal, Trash } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 
-import { BillboardColumn } from "@/components/components/billboards/columns";
+import { CategoryColumn } from "@/components/components/categories/columns";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -18,7 +18,7 @@ import axios from "axios";
 import AlertModal from "@/components/modals/alert-modal";
 
 interface CellActionProps {
-  data: BillboardColumn;
+  data: CategoryColumn;
 }
 
 const CellAction: React.FC<CellActionProps> = ({ data }) => {
@@ -30,22 +30,22 @@ const CellAction: React.FC<CellActionProps> = ({ data }) => {
 
   const onCopy = (id: string) => {
     navigator.clipboard.writeText(id);
-    toast.success("Billboard ID has been copied to the clipboard!");
+    toast.success("Category ID has been copied to the clipboard!");
   };
 
   const onUpdate = () =>
-    router.push(`/${params.storeId}/billboards/${data.id}`);
+    router.push(`/${params.storeId}/categories/${data.id}`);
 
   const onDelete = async () => {
     try {
       setLoading(true);
-      await axios.delete(`/api/${params.storeId}/billboards/${data.id}`);
+      await axios.delete(`/api/${params.storeId}/categories/${data.id}`);
       router.refresh();
-      router.push(`/${params.storeId}/billboards`);
-      toast.success("Billboard has been deleted successfully!");
+      router.push(`/${params.storeId}/categories`);
+      toast.success("Category has been deleted successfully!");
     } catch (error) {
       toast.error(
-        "Make sure you've removed all billboard dependencies like categories..."
+        "Make sure you've removed all category dependencies like billboards, products, etc..."
       );
     } finally {
       setLoading(false);
