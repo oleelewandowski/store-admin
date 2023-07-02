@@ -21,7 +21,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json(store);
   } catch (error) {
-    console.warn(`[STORES_ROUTE_POST_ERROR]: ${error}`);
+    console.error(`[STORES_ROUTE_POST_ERROR]: ${error}`);
     return new NextResponse("Internal Server Error", { status: 500 });
   }
 }

@@ -11,13 +11,20 @@ const MainNav = ({
 }: React.HTMLAttributes<HTMLElement>) => {
   const pathname = usePathname();
   const params = useParams();
+
   const ROUTES = [
+    {
+      href: `/${params.storeId}`,
+      label: "Overview",
+      active: pathname === `/${params.storeId}`,
+    },
     {
       href: `/${params.storeId}/settings`,
       label: "Settings",
       active: pathname === `/${params.storeId}/settings`,
     },
   ];
+
   return (
     <nav className={cn("flex items-center space-x-4 lg:space-x-6", className)}>
       {ROUTES.map(({ label, href, active }) => (
