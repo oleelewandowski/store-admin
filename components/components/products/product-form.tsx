@@ -343,7 +343,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
                   <div className='space-y-1 leading-none'>
                     <FormLabel>Featured</FormLabel>
                     <FormDescription>
-                      This product will be visible on the Store's home page
+                      This product will be visible on the Store home page
                     </FormDescription>
                   </div>
                 </FormItem>
