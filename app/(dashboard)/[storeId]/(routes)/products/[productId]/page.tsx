@@ -1,6 +1,5 @@
-import BillboardForm from "@/components/components/billboards/billboard-form";
-import ProductForm from "@/components/components/products/product-form";
 import prismadb from "@/lib/prisma-db";
+import ProductForm from "@/components/components/products/product-form";
 
 interface ProductPageProps {
   params: { productId: string; storeId: string };

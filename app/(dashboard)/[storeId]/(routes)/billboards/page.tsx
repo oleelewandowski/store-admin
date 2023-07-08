@@ -1,8 +1,8 @@
 import { format } from "date-fns";
 
+import prismadb from "@/lib/prisma-db";
 import BillboardClient from "@/components/components/billboards/billboards-client";
 import { BillboardColumn } from "@/components/components/billboards/columns";
-import prismadb from "@/lib/prisma-db";
 
 interface BillboardsPageProps {
   params: { storeId: string };

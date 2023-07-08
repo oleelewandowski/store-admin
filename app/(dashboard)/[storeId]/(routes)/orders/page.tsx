@@ -1,8 +1,8 @@
 import { format } from "date-fns";
 
-import { OrderColumn } from "@/components/components/orders/columns";
-import prismadb from "@/lib/prisma-db";
 import { formatter } from "@/lib/utils";
+import prismadb from "@/lib/prisma-db";
+import { OrderColumn } from "@/components/components/orders/columns";
 import OrdersClient from "@/components/components/orders/orders-client";
 
 interface OrdersPageProps {

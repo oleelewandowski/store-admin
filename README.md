@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Introduction
 
-## Getting Started
+This project was created along with the tutorial series on the Code With Antonio YouTube channel. It aims to provide an educational resource for learning how to build a robust ecommerce administration tool. The tutorial series takes you through the process of developing a feature-rich dashboard using the latest technologies and industry best practices.
 
-First, run the development server:
+## Deployment
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Click the [link](https://store-admin-olee.vercel.app/) to see deployed App.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technology Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The OLEE E-commerce Dashboard leverages the power of the following technologies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Frontend: Next.js 13.4 with an App Router, TypeScript
+- Database: MySQL (PlanetScale)
+- ORM: Prisma
+- CSS: Tailwind CSS
+- HTTP Requests: Axios
+- State Management: Zustand
+- UI Components: shadcn, radix-ui
+- Authentication: Clerk
+- Dashboard Overview: Recharts
+- Forms: react-hook-form
+- Form Validation: Zod
+- Image Uploader: next-cloudinary
+- Payments: Stripe
 
-## Learn More
+# Features
 
-To learn more about Next.js, take a look at the following resources:
+The OLEE E-commerce Dashboard is a cutting-edge solution designed to empower you with seamless control over your e-commerce store. With its modern and intuitive interface, our dashboard offers a comprehensive suite of features to help you efficiently manage and optimize your online store. Here are some of the key features:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Multiple Store Management: Easily create and manage multiple stores within a single dashboard. Each store can be customized to have its own unique configuration, including the main page view, categories, and products.
+- Customization: Tailor the appearance and functionality of each store according to your specific requirements. Personalize the main page layout, select and organize categories, and showcase your products in a way that best represents your brand.
+- Order Management: Gain full visibility and control over all orders placed across your stores. Track and monitor each order's status, ensuring smooth order processing and fulfillment. When a payment is completed, the product is automatically removed from the store's inventory, preventing overselling.
+- Order Details: Access all the necessary information to complete orders efficiently. View customer details, shipping information, and product specifics, enabling seamless order fulfillment and customer satisfaction.
+- Store Overview: Get a comprehensive overview of each store's performance and statistics. Monitor total revenue, sales, product inventory, and other key metrics, allowing you to make data-driven decisions to optimize your business.

@@ -1,7 +1,8 @@
 import { format } from "date-fns";
+
 import { formatter } from "@/lib/utils";
-import { ProductColumn } from "@/components/components/products/columns";
 import prismadb from "@/lib/prisma-db";
+import { ProductColumn } from "@/components/components/products/columns";
 import ProductsClient from "@/components/components/products/products-client";
 
 interface ProductsPageProps {

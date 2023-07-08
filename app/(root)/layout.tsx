@@ -1,8 +1,8 @@
-import prismadb from "@/lib/prisma-db";
-import { auth } from "@clerk/nextjs";
-
-import { checkUserAuth } from "@/lib/auth-utils";
 import { redirect } from "next/navigation";
+
+import { auth } from "@clerk/nextjs";
+import prismadb from "@/lib/prisma-db";
+import { checkUserAuth } from "@/lib/auth-utils";
 
 export default async function RootLayout({
   children,

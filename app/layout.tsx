@@ -1,17 +1,20 @@
+import "./globals.css";
 import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
-import "./globals.css";
 import { ModalProvider } from "@/providers/modal-provider";
-import prismadb from "@/lib/prisma-db";
 import { ToasterProvider } from "@/providers/toast-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Admin Dashboard",
-  description: "Admin Dashboard",
+  title: "OLEE Ecommerce Dashboard",
+  description:
+    "Manage and monitor your eCommerce store with the powerful admin dashboard.",
+  keywords:
+    "eCommerce, admin dashboard, management, monitoring, orders, products, customers",
+  author: "OLEE",
 };
 
 export default function RootLayout({
@@ -23,7 +26,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang='en'>
         <body className={inter.className}>
-          <ThemeProvider attribute='class' defaultTheme='dark'>
+          <ThemeProvider attribute='class' defaultTheme='system'>
             <ToasterProvider />
             <ModalProvider />
             {children}

@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
 import prismadb from "@/lib/prisma-db";
+import { isRequired } from "@/lib/utils";
 
 export async function POST(
   req: Request,
@@ -17,13 +18,7 @@ export async function POST(
 
     if (!userId) return new NextResponse("Unauthenticated", { status: 401 });
 
-    if (!name) return new NextResponse("Name is required", { status: 400 });
-
-    if (!billboardId)
-      return new NextResponse("Billboard ID is required", { status: 400 });
-
-    if (!params.storeId)
-      return new NextResponse("Store ID is required", { status: 400 });
+    isRequired([name, billboardId, params.storeId]);
 
     const storeByUserId = prismadb.store.findFirst({
       where: {
@@ -59,8 +54,7 @@ export async function GET(
   }
 ) {
   try {
-    if (!params.storeId)
-      return new NextResponse("Store ID is required", { status: 400 });
+    isRequired([params.storeId]);
 
     const categories = await prismadb.category.findMany({
       where: {

@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
 import prismadb from "@/lib/prisma-db";
+import { isRequired } from "@/lib/utils";
 
 export async function POST(
   req: Request,
@@ -26,24 +27,15 @@ export async function POST(
 
     if (!userId) return new NextResponse("Unauthenticated", { status: 401 });
 
-    if (!name) return new NextResponse("Label is required", { status: 400 });
-
-    if (!price) return new NextResponse("Price is required", { status: 400 });
-
-    if (!categoryId)
-      return new NextResponse("Category ID is required", { status: 400 });
-
-    if (!sizeId)
-      return new NextResponse("Size ID is required", { status: 400 });
-
-    if (!colorId)
-      return new NextResponse("Color ID is required", { status: 400 });
-
-    if (!images || !images.length)
-      return new NextResponse("Images are required", { status: 400 });
-
-    if (!params.storeId)
-      return new NextResponse("Store ID is required", { status: 400 });
+    isRequired([
+      name,
+      price,
+      categoryId,
+      sizeId,
+      colorId,
+      images,
+      params.storeId,
+    ]);
 
     const storeByUserId = prismadb.store.findFirst({
       where: {
@@ -95,8 +87,7 @@ export async function GET(
     const sizeId = searchParams.get("sizeId" || undefined);
     const isFeatured = searchParams.get("isFeatured");
 
-    if (!params.storeId)
-      return new NextResponse("Store ID is required", { status: 400 });
+    isRequired([params.storeId]);
 
     const products = await prismadb.product.findMany({
       where: {

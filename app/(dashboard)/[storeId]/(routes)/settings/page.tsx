@@ -1,8 +1,8 @@
 import { redirect } from "next/navigation";
 
-import { checkUserAuth } from "@/lib/auth-utils";
-import prismadb from "@/lib/prisma-db";
 import { auth } from "@clerk/nextjs";
+import prismadb from "@/lib/prisma-db";
+import { checkUserAuth } from "@/lib/auth-utils";
 import SettingsForm from "@/components/components/settings/settings-form";
 
 interface SettingsPageProps {

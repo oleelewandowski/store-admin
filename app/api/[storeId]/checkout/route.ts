@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 import { stripe } from "@/lib/stripe";
 import prismadb from "@/lib/prisma-db";
+import { isRequired } from "@/lib/utils";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -20,9 +21,7 @@ export async function POST(
 ) {
   const { productIds } = await req.json();
 
-  if (!productIds || productIds.length === 0) {
-    return new NextResponse("Product ids are required", { status: 400 });
-  }
+  isRequired(productIds);
 
   const products = await prismadb.product.findMany({
     where: {

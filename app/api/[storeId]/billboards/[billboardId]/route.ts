@@ -1,4 +1,5 @@
 import prismadb from "@/lib/prisma-db";
+import { isRequired } from "@/lib/utils";
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
@@ -12,13 +13,7 @@ export async function PATCH(
 
     if (!userId) return new NextResponse("Unauthenticated", { status: 401 });
 
-    if (!label) return new NextResponse("Label is required", { status: 400 });
-
-    if (!imageUrl)
-      return new NextResponse("Image URL is required", { status: 400 });
-
-    if (!params.billboardId)
-      return new NextResponse("Billboard ID is required", { status: 400 });
+    isRequired([label, imageUrl, params.billboardId]);
 
     const storeByUserId = prismadb.store.findFirst({
       where: {
@@ -56,8 +51,7 @@ export async function DELETE(
 
     if (!userId) return new NextResponse("Unauthorized", { status: 401 });
 
-    if (!params.billboardId)
-      return new NextResponse("Billboard ID is required", { status: 400 });
+    isRequired([params.billboardId]);
 
     const storeByUserId = prismadb.store.findFirst({
       where: {
@@ -87,8 +81,7 @@ export async function GET(
   { params }: { params: { billboardId: string } }
 ) {
   try {
-    if (!params.billboardId)
-      return new NextResponse("Billboard ID is required", { status: 400 });
+    isRequired([params.billboardId]);
 
     const billboard = await prismadb.billboard.findUnique({
       where: {

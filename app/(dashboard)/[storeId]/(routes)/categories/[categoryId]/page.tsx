@@ -1,5 +1,5 @@
-import CategoryForm from "@/components/components/categories/category-form";
 import prismadb from "@/lib/prisma-db";
+import CategoryForm from "@/components/components/categories/category-form";
 
 interface CategoryPageProps {
   params: { categoryId: string; storeId: string };
