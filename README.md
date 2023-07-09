@@ -33,3 +33,8 @@ The OLEE E-commerce Dashboard is a cutting-edge solution designed to empower you
 - Order Management: Gain full visibility and control over all orders placed across your stores. Track and monitor each order's status, ensuring smooth order processing and fulfillment. When a payment is completed, the product is automatically removed from the store's inventory, preventing overselling.
 - Order Details: Access all the necessary information to complete orders efficiently. View customer details, shipping information, and product specifics, enabling seamless order fulfillment and customer satisfaction.
 - Store Overview: Get a comprehensive overview of each store's performance and statistics. Monitor total revenue, sales, product inventory, and other key metrics, allowing you to make data-driven decisions to optimize your business.
+
+DASHBOARD PREVIEW:
+![image](https://github.com/oleelewandowski/store-admin/assets/104866200/253fec38-f400-474e-8a52-d5c90f14765f)
+![image](https://github.com/oleelewandowski/store-admin/assets/104866200/69c1c3a3-d149-466a-89ac-1410dcbee217)
+
